@@ -9,13 +9,6 @@ export default async function ProductsPage({
 }: {
   searchParams: { q: string; offset: string };
 }) {
-  const search = searchParams.q ?? '';
-  const offset = searchParams.offset ?? 0;
-  const { products, newOffset, totalProducts } = await getProducts(
-    search,
-    Number(offset)
-  );
-
   return (
     <Tabs defaultValue="all">
       <div className="flex items-center">
@@ -43,11 +36,11 @@ export default async function ProductsPage({
         </div>
       </div>
       <TabsContent value="all">
-        <ProductsTable
+        {/* <ProductsTable
           products={products}
           offset={newOffset ?? 0}
           totalProducts={totalProducts}
-        />
+        /> */}
       </TabsContent>
     </Tabs>
   );
